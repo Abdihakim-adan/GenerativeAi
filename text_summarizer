@@ -1,0 +1,6 @@
+from transformers import pipeline
+summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+text="hello how are you i am abdimalik ibrahim adan a student at the university of nairobi how many words can i write in 1 minute that is a great question and a frequently asked question the answer to that is 300 words a minute just do the calculation"
+summary = summarizer(text,max_length=50,min_length=30)
+
+print("summary:", summary[0] ['summary_text'])
